@@ -5,13 +5,13 @@ def is_prime(n):
     5 should return True
     6 should return False
 
-    :n: n
+    :n: number to check
 
-    output is a bool
+    returns a bool
     """
 
     if not isinstance(n, int):
-        raise RuntimeError("Can only test integers")
+        raise TypeError("Can only test integers")
 
     # special cases
     if n == 1:
@@ -34,16 +34,16 @@ def first_n_primes(n):
 
     :n: n
 
-    output is a list of integers
+    output is a list
     """
 
     if not isinstance(n, int):
-        raise RuntimeError("Must ask for an integer number")
+        raise TypeError("Must ask for an integer number")
 
     primes = []
     current = 2
 
-    while len(primes) != n:
+    while len(primes) < n:
         if is_prime(current):
             primes.append(current)
         current += 1
